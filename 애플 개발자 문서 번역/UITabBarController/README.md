@@ -26,7 +26,7 @@
 
 &nbsp;
 ![](https://docs-assets.developer.apple.com/published/6ffdd16259/a4c30adf-176b-4020-ae69-f228edb9e621.png)
-&nbps;
+&nbsp;
 
 
 탭 바 컨트롤러의 탭 바 뷰에 직접 액세스해서는 안된다. 탭 바 컨트롤러의 탭을 구성하려면 각 탭의 루트 뷰를 제공하는 뷰 컨트롤러를 [viewControllers](https://developer.apple.com/documentation/uikit/uitabbarcontroller/1621185-viewcontrollers) 프로퍼티에 할당한다. 뷰 컨트롤러를 지정하는 순서에 따라 탭 바에 나타나는 순서가 결정된다. 이 프로퍼티를 설정할 때 [selectedViewController](https://developer.apple.com/documentation/uikit/uitabbarcontroller/1621172-selectedviewcontroller) 프로퍼티에 값을 지정하여 처음에 어떤 뷰 컨트롤러가 선택되었는지 나타내야 한다. ([selectedIndex](https://developer.apple.com/documentation/uikit/uitabbarcontroller/1621171-selectedindex) 프로퍼티를 사용하여 배열 인덱스별로 뷰 컨트롤러를 선택할 수도 있다.) 앱 윈도우에 탭 바 컨트롤러의 뷰 (상속된 [view](https://developer.apple.com/documentation/uikit/uiviewcontroller/1621460-view) 프로퍼티를 사용하여 가져옴)를 포함하면 탭 바 컨트롤러가 자동으로 해당 뷰 컨트롤러를 선택하고 콘텐츠를 표시하며, 탭 바 인터페이스에 맞게 필요에 따라 크기를 조정한다.
@@ -53,7 +53,7 @@
 
 &nbsp;
 ## The More Navigation Controller
-탭 바는 커스텀 아이템을 표시하기 위한 공간이 제하되어 있다. 탭 바 컨트롤러에 6개 이상의 커스텀 뷰 컨트롤러를 추가하면 탭 바 컨트롤러는 처음 네 개의 아이템과 표준 More 아이템만 탭 바에 표시한다. More 아이템을 누르면 나머지 아이템을 선택할 수 있는 표준 인터페이스가 나타난다.
+탭 바는 커스텀 아이템을 표시하기 위한 공간이 제한되어 있다. 탭 바 컨트롤러에 6개 이상의 커스텀 뷰 컨트롤러를 추가하면 탭 바 컨트롤러는 처음 네 개의 아이템과 표준 More 아이템만 탭 바에 표시한다. More 아이템을 누르면 나머지 아이템을 선택할 수 있는 표준 인터페이스가 나타난다.
 
 
 표준 More 아이템의 인터페이스에는 사용자가 탭 바를 재구성 할 수 있는 편집 버튼이 있다. 기본적으로 사용자는 탭 바의 모든 아이템을 다시 정렬할 수 있다. 사용자가 일부 아이템을 수정하지 못하도록하려는 경우 [customizableViewControllers](https://developer.apple.com/documentation/uikit/uitabbarcontroller/1621184-customizableviewcontrollers) 프로퍼티의 배열에서 적절한 뷰 컨트롤러를 제거할 수 있다.
