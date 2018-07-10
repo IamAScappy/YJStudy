@@ -105,7 +105,7 @@ self.present(alert, animated: true, completion: nil)
 ## See Also
 ### Alerts
 * [Getting the User's Attention with Alerts and Action Sheets](https://developer.apple.com/documentation/uikit/windows_and_screens/getting_the_user_s_attention_with_alerts_and_action_sheets)
-* class AlertAction
+* class UIAlertAction
 
 
 &nbsp;      
