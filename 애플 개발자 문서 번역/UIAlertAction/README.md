@@ -41,7 +41,7 @@
     * 얼럿의 액션 버튼에 적용할 스타일이다.
 
 
-& nbsp;
+&nbsp;
 ## Relationships
 ### Inherits From
 * NSObject
