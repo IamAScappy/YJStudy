@@ -4,6 +4,11 @@
 
 * [Overview](#overview)
 * [Topics](#topics)
+    * [Creating an Alert Controller](#creating-an-alert-controller)
+    * [Configuring the Alert](#configuring-the-alert)
+    * [Configuring the User Actions](#configuring-the-user-actions)
+    * [Configuring Text Fields](#configuring-text-fields)
+    * [Constants](#constants)
 * [Relationships](#relationships)
 * [See Also](#see-also)
 
@@ -25,7 +30,7 @@ self.present(alert, animated: true, completion: nil)
 ```
 
 
-[UIAlertController.Style.alert](https://developer.apple.com/documentation/uikit/uialertcontroller/style/alert) 스타일로 얼럿을 구성할 때 얼렇 인터페이스에 텍스트 필드를 추가할 수도 있다. 얼럿 컨트롤러를 사용하면 표시하기 전에 텍스트 필드 구성을 위한 블록을 제공할 수 있다. 얼럿 컨트롤러는 나중에 해당 값에 액세스 할 수 있도록 각 텍스트 필드에 대한 참조를 유지 관리한다.
+[UIAlertController.Style.alert](https://developer.apple.com/documentation/uikit/uialertcontroller/style/alert) 스타일로 얼럿을 구성할 때 얼럿 인터페이스에 텍스트 필드를 추가할 수도 있다. 얼럿 컨트롤러를 사용하면 표시하기 전에 텍스트 필드 구성을 위한 블록을 제공할 수 있다. 얼럿 컨트롤러는 나중에 해당 값에 액세스 할 수 있도록 각 텍스트 필드에 대한 참조를 유지 관리한다.
 
 
 &nbsp;
