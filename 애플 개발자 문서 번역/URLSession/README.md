@@ -124,12 +124,12 @@ URLSession 클래스를 사용하여 요청하려면 다음을 수행한다:
 3. 본문(body) 콘텐츠를 서버에 처음 업로드하는 경우 (해당되는 경우) 델리게이트는 업로드 진행률을 보고하는 [urlSession(_:task:didSendBodyData:totalBytesSent:totalBytesExpectedToSend:)](https://developer.apple.com/documentation/foundation/urlsessiontaskdelegate/1408299-urlsession) 콜백을 주기적으로 받는다.
 4. 서버가 응답을 보낸다.
 5. 응답에서 인증이 필요함을 나타내면 세션에서 델리게이트의 [urlSession(_:task:didReceive:completionHandler:)](https://developer.apple.com/documentation/foundation/urlsessiontaskdelegate/1411595-urlsession) 메서드를 호출한다. 2단계로 돌아간다.
-6. 응답이 HTTP 리다이렉션 응답인 경우 URLSession 객체는 델리게이트의 [urlSession(_:task:willPerformHTTPRedirection:newRequest:completionHandler:)](https://developer.apple.com/documentation/foundation/urlsessiontaskdelegate/1411626-urlsession) 메서드를 호출한다. 이 델리게이트 메서드는 제공된 완료 핸들러를 제공된 [NSURLRequest](https://developer.apple.com/documentation/foundation/nsurlrequest) 객체(리다이렉션을 따르는), 새 NSURLRequest 객체(다른 URL로 리 다이렉션) 또는 nil(리다이렉션의 응답 본문(body)를 유효한 응답으로 처리하여 결과로 반환)와 같이 호출한다.
+6. 응답이 HTTP 리다이렉션 응답인 경우 URLSession 객체는 델리게이트의 [urlSession(_:task:willPerformHTTPRedirection:newRequest:completionHandler:)](https://developer.apple.com/documentation/foundation/urlsessiontaskdelegate/1411626-urlsession) 메서드를 호출한다. 이 델리게이트 메서드는 제공된 완료 핸들러를 제공된 [NSURLRequest](https://developer.apple.com/documentation/foundation/nsurlrequest) 객체(리다이렉션을 따르는), 새 NSURLRequest 객체(다른 URL로 리다이렉션) 또는 nil(리다이렉션의 응답 본문(body)를 유효한 응답으로 처리하여 결과로 반환)와 같이 호출한다.
     * 리다이렉션을 따르기로 결정한 경우 2단계로 돌아간다.
     * 델리게이트가 이 메서드를 구현하지 않으면 최대 리다이렉션 수까지 리다이렉션이 이어진다.
-7. [downloadTask(withResumeData:)](https://developer.apple.com/documentation/foundation/urlsession/1409226-downloadtask) 또는 [downloadTask(withResumeData:completionHandler:)](https://developer.apple.com/documentation/foundation/urlsession/1411598-downloadtask)를 호출하여 만든 다운로드 (또는 리다운로드) 작업의 경우 URLSession은 새 작업 객체로 델리게이트의 [urlSession(_:downloadTask:didResumeAtOffset:expectedTotalBytes:)](https://developer.apple.com/documentation/foundation/urlsessiondownloaddelegate/1408142-urlsession) 메서드를 호출한다.
+7. [downloadTask(withResumeData:)](https://developer.apple.com/documentation/foundation/urlsession/1409226-downloadtask) 또는 [downloadTask(withResumeData:completionHandler:)](https://developer.apple.com/documentation/foundation/urlsession/1411598-downloadtask)를 호출하여 만든 다운로드 (또는 재다운로드) 작업의 경우 URLSession은 새 작업 객체로 델리게이트의 [urlSession(_:downloadTask:didResumeAtOffset:expectedTotalBytes:)](https://developer.apple.com/documentation/foundation/urlsessiondownloaddelegate/1408142-urlsession) 메서드를 호출한다.
 8. 데이터 작업의 경우 URLSession 객체는 델리게이트의 [urlSession(_:dataTask:didReceive:completionHandler:)](https://developer.apple.com/documentation/foundation/urlsessiondatadelegate/1410027-urlsession) 메서드를 호출한다. 데이터 작업을 다운로드 작업으로 변환할 것인지 여부를 결정한 다음 완료 핸들러를 호출하여 작업을 변환, 계속 또는 취소한다. 앱이 데이터 작업을 다운로드 작업으로 변환하도록 선택한 경우 URLSession은 새 다운로드 작업을 매개 변수로 사용하여 델리게이트의 [urlSession(_:dataTask:didBecome:)](https://developer.apple.com/documentation/foundation/urlsessiondatadelegate/1409936-urlsession) 메서드를 호출한다. 이 호출 후 델리게이트는 데이터 작업에서 더이상 콜백을 받지 않고 다운로드 작업에서 콜백을 수신하기 시작한다.
-9. 서버에서 전송하는 동안 델리게이트는 주기적으로 작업 수준 콜백을 수신하여 전송 진행 상황을 보고한다. 데이터 작업의 경우, 세션은 수신된 실제 데이터를 사용하여 델리게이트의 [urlSession(_:dataTask:didReceive:)](https://developer.apple.com/documentation/foundation/urlsessiondatadelegate/1411528-urlsession) 메서드를 호출한다. 다운로드 작업의 경우 세션은 델리게이트의 urlSession(_:downloadTask:didWriteData:totalBytesWritten:totalBytesExpectedToWrite:)](https://developer.apple.com/documentation/foundation/urlsessiondownloaddelegate/1409408-urlsession) 메서드를 디스크에 성공적으로 기록된 바이트 수와 함께 호출한다. 사용자가 다운로드를 일시 중지하도록 앱에 지시하면 [cancel(byProducingResumeData:)](https://developer.apple.com/documentation/foundation/urlsessiondownloadtask/1411634-cancel) 메서드를 호출하여 작업을 취소한다. 나중에 사용자가 다운로드를 재개하도록 앱에 요청하면 반환된 반환된 다시 시작 데이터를 [downloadTask(withResumeData:)](https://developer.apple.com/documentation/foundation/urlsession/1409226-downloadtask) 또는 [downloadTask(withResumeData:completionHandler:)](https://developer.apple.com/documentation/foundation/urlsession/1411598-downloadtask) 메서드로 전달하여 다운로드를 계속하는 새 다운로드 작업을 만든다. (1단계로 이동한다.)
+9. 서버에서 전송하는 동안 델리게이트는 주기적으로 작업 수준 콜백을 수신하여 전송 진행 상황을 보고한다. 데이터 작업의 경우, 세션은 수신된 실제 데이터를 사용하여 델리게이트의 [urlSession(_:dataTask:didReceive:)](https://developer.apple.com/documentation/foundation/urlsessiondatadelegate/1411528-urlsession) 메서드를 호출한다. 다운로드 작업의 경우 세션은 델리게이트의 [urlSession(_:downloadTask:didWriteData:totalBytesWritten:totalBytesExpectedToWrite:)](https://developer.apple.com/documentation/foundation/urlsessiondownloaddelegate/1409408-urlsession) 메서드를 디스크에 성공적으로 기록된 바이트 수와 함께 호출한다. 사용자가 다운로드를 일시 중지하도록 앱에 지시하면 [cancel(byProducingResumeData:)](https://developer.apple.com/documentation/foundation/urlsessiondownloadtask/1411634-cancel) 메서드를 호출하여 작업을 취소한다. 나중에 사용자가 다운로드를 재개하도록 앱에 요청하면 반환된 재시작 데이터를 [downloadTask(withResumeData:)](https://developer.apple.com/documentation/foundation/urlsession/1409226-downloadtask) 또는 [downloadTask(withResumeData:completionHandler:)](https://developer.apple.com/documentation/foundation/urlsession/1411598-downloadtask) 메서드로 전달하여 다운로드를 계속하는 새 다운로드 작업을 만든다. (1단계로 이동한다.)
 10. 데이터 작업의 경우, URLSession 객체는 델리게이트의 [urlSession(_:dataTask:willCacheResponse:completionHandler:)](https://developer.apple.com/documentation/foundation/urlsessiondatadelegate/1411612-urlsession) 메서드를 호출할 수 있다. 앱은 캐싱을 허용할지 여부를 결정해야 한다. 이 메서드를 구현하지 않으면 기본적으로 세션의 구성 객체에 지정된 캐싱 정책을 사용한다.
 11. 응답이 여러 부분으로 인코딩 된 경우 세션에서 델리게이트의 didReceiveResponse 메서드를 다시 호출한 다음 0개 이상의 추가 didReceiveData를 호출할 수 있다. 이 경우 8단계(didReceiveResponse 호출 처리)로 이동한다.
 12. 다운로드 작업이 성공적으로 완료되면 URLSession 객체는 임시 파일의 위치를 사용하여 작업의 [urlSession(_:downloadTask:didFinishDownloadingTo:)](https://developer.apple.com/documentation/foundation/urlsessiondownloaddelegate/1411575-urlsession) 메서드를 호출한다. 이 델리게이트 메서드가 반환되기 전에 앱에서 이 파일의 응답 데이터를 읽거나 영구 위치로 이동해야 한다.
@@ -149,7 +149,7 @@ URLSession 클래스를 사용하여 요청하려면 다음을 수행한다:
 
 &nbsp;
 ## Thread Safety
-URL 세션 API 자체는 완전한 스레드 안전성을 제공한다. 모든 스레드 컨텍스트에서 세션 및 작업을 자유롭게 만들 수 있으며 델리게이트 메서드가 제공된 완료 핸들러를 호출하면 작업이 올바른 델리게이트 큐에 자동으로 예약된다.
+URLSession API 자체는 완전한 스레드 안전성을 제공한다. 모든 스레드 컨텍스트에서 세션 및 작업을 자유롭게 만들 수 있으며 델리게이트 메서드가 제공된 완료 핸들러를 호출하면 작업이 올바른 델리게이트 큐에 자동으로 예약된다.
 
 
 &nbsp;
@@ -196,13 +196,13 @@ URL 세션 API 자체는 완전한 스레드 안전성을 제공한다. 모든 �
 * `func dataTask(with: URL, completionHandler: (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask`
     * 지정된 URL의 콘텐츠를 검색하고 완료되면 핸들러를 호출하는 작업을 만든다.
 * `func dataTask(with: URLRequest) -> URLSessionDataTask`   
-    * 지정된 URL 요청 객체를 기반으로 URL의 콘텐츠를 검색하는 작업을 만든다.
+    * 지정된 URLRequest 객체를 기반으로 URL의 콘텐츠를 검색하는 작업을 만든다.
 * `func dataTask(with: URLRequest, completionHandler: (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask`
-    * 지정된 URL 요청 객체를 기반으로 URL의 콘텐츠를 검색하고 완료시 핸들러를 호출하는 작업을 만든다.
+    * 지정된 URLRequest 객체를 기반으로 URL의 콘텐츠를 검색하고 완료시 핸들러를 호출하는 작업을 만든다.
 * `class URLSessionDataTask`
-    * 다운로드한 데이터를 메모리에있는 앱으로 직접 반환하는 URL 세션 작업.
+    * 다운로드한 데이터를 메모리에있는 앱으로 직접 반환하는 URLSession 작업.
 * `protocol URLSessionDataDelegate`
-    * URLSession 인스턴스가 델리게이트를 호출하여 데이터 관련 작업 수준 이벤트를 처리하고 작업을 업롣하는 메서드를 정의하는 프로토콜이다.
+    * URLSession 인스턴스가 델리게이트를 호출하여 데이터 관련 작업 수준 이벤트를 처리하고 작업을 업로드하는 메서드를 정의하는 프로토콜이다.
     
 
 ### Adding Download Tasks to a Session
@@ -213,15 +213,15 @@ URL 세션 API 자체는 완전한 스레드 안전성을 제공한다. 모든 �
 * `func downloadTask(with: URL, completionHandler: (URL?, URLResponse?, Error?) -> Void) -> URLSessionDownloadTask`
     * 지정된 URL의 콘텐츠를 검색하고 결과를 파일에 저장하고 완료시 핸들러를 호출하는 다운로드 작업을 만든다.
 * `func downloadTask(with: URLRequest) -> URLSessionDownloadTask`
-    * 지정된 URL의 요청 객체를 기반으로 URL의 콘텐츠를 검색하고 결과를 파일에 저장하는 다운로드 작업을 만든다.
+    * 지정된 URLRequest 객체를 기반으로 URL의 콘텐츠를 검색하고 결과를 파일에 저장하는 다운로드 작업을 만든다.
 * `func downloadTask(with: URLRequest, completionHandler: (URL?, URLResponse?, Error?) -> Void) -> URLSessionDownloadTask`
-    * 지정된 URL 요청 객체를 기반으로 URL 콘텐츠를 검색하고 결과를 파일에 저장하며 완료시 핸들러를 호출하는 다운로드 작업을 만든다.
+    * 지정된 URLRequest 객체를 기반으로 URL 콘텐츠를 검색하고 결과를 파일에 저장하며 완료시 핸들러를 호출하는 다운로드 작업을 만든다.
 * `func downloadTask(withResumeData: Data) -> URLSessionDownloadTask`
     * 이전에 취소되었거나 실패한 다운로드를 다시 시작하기위한 다운로드 작업을 만든다.
 * `func downloadTask(withResumeData: Data, completionHandler: (URL?, URLResponse?, Error?) -> Void) -> URLSessionDownloadTask`
     * 이전에 취소되었거나 실패한 다운로드를 다시 시작하기위한 다운로드 작업을 만들고 완료되면 핸들러를 호출한다.
 * `class URLSessionDownloadTask`
-    * 다운로드한 데이터를 파일에 저장하는 URL 세션 작업.
+    * 다운로드한 데이터를 파일에 저장하는 URLSession 작업.
 * `protocol URLSessionDownloadDelegate`
     * URLSession 인스턴스가 델리게이트에서 다운로드 작업과 관련된 작업 수준 이벤트를 처리하기 위해 호출하는 메서드를 정의하는 프로토콜이다.
     
@@ -230,17 +230,17 @@ URL 세션 API 자체는 완전한 스레드 안전성을 제공한다. 모든 �
 > 세션에 업로드 작업 추가
 
 * `func uploadTask(with: URLRequest, from: Data) -> URLSessionUploadTask`
-    * 지정된 URL 요청 객체에 대한 HTTP 요청을 수행하고 제공된 데이터를 업로드하는 작업을 만든다.
+    * 지정된 URLRequest 객체에 대한 HTTP 요청을 수행하고 제공된 데이터를 업로드하는 작업을 만든다.
 * `func uploadTask(with: URLRequest, from: Data?, completionHandler: (Data?, URLResponse?, Error?) -> Void) -> URLSessionUploadTask`
-    * 지정된 URL 요청 객체에 대한 HTTP 요청을 수행하고 제공된 데이터를 업로드하고 완료시 핸들러를 호출하는 작업을 만든다.
+    * 지정된 URLRequest 객체에 대한 HTTP 요청을 수행하고 제공된 데이터를 업로드하고 완료시 핸들러를 호출하는 작업을 만든다.
 * `func uploadTask(with: URLRequest, fromFile: URL) -> URLSessionUploadTask`
     * 지정된 파일을 업로드하기위한 HTTP 요청을 수행하는 작업을 만든다.
 * `func uploadTask(with: URLRequest, fromFile: URL, completionHandler: (Data?, URLResponse?, Error?) -> Void) -> URLSessionUploadTask`
     * 지정된 파일을 업로드하기위한 HTTP 요청을 수행한 후 작업이 완료되면 핸들러를 호출하는 작업을 만든다.
 * `func uploadTask(withStreamedRequest: URLRequest) -> URLSessionUploadTask`
-    * 지정된 URL 요청을 기반으로 데이터를 업로드하기위한 HTTP 요청을 수행하는 작업을 만든다.
+    * 지정된 URLRequest를 기반으로 데이터를 업로드하기위한 HTTP 요청을 수행하는 작업을 만든다.
 * `class URLSessionUploadTask`
-    * 요청 본문(body)의 네트워크에 데이터를 업로드하는 URL 세션 작업.
+    * 요청 본문(body)의 네트워크에 데이터를 업로드하는 URLSession 작업.
 * `protocol URLSessionDataDelegate`
     * URLSession 인스턴스가 델리게이트를 호출하여 데이터 관련 작업 수준 이벤트를 처리하고 작업을 업로드하는 메서드를 정의하는 프로토콜이다.
     
@@ -253,7 +253,7 @@ URL 세션 API 자체는 완전한 스레드 안전성을 제공한다. 모든 �
 * `func streamTask(with: NetService) -> URLSessionStreamTask`
     * 지정된 네트워크 서비스를 사용하여 양방향 TCP/IP 연결을 설정하는 작업을 만든다.
 * `class URLSessionStreamTask`
-    * 스트림 기반 URL 세션 작업이다.
+    * 스트림 기반 URLSession 작업이다.
 * `protocol URLSessionStreamDelegate`
     * URLSession 인스턴스가 델리게이트에서 스트림 작업과 관련된 작업 수준 이벤트를 처리하기 위해 호출하는 메서드를 정의하는 프로토콜이다.
 
