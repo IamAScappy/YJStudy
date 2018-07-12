@@ -34,6 +34,8 @@ URLSession 클래스 및 관련 클래스는 콘텐츠를 다운로드하기위�
 >  **Important**
 > 
 > URLSession API에는 참조 문서를 독자적으로 읽는 경우 명확하지 않을 수 있는 여러 가지 클래스가 상당히 복잡한 방식으로 함께 포함된다. 이 API를 사용하기 전에 [URL Loading System](https://developer.apple.com/documentation/foundation/url_loading_system) 개요를 읽어야한다. [First Steps](https://developer.apple.com/documentation/foundation/url_loading_system#2878017) 섹션의 기사에서는 URLSession을 사용하여 일반적인 작업을 수행하는 예제를 제공한다. 
+
+
 &nbsp;
 
 
