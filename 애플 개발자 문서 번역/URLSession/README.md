@@ -8,7 +8,7 @@
 * [Using a Session Delegate](#using-a-session-delegate)
 * [Asynchronicity and URL Sessions](#asynchronicity-and-url-sessions)
 * [Protocol Support](#protocol-support)
-* [App Transport Security (ATS)](#app-transport-security-(ats))
+* [App Transport Security (ATS)](#app-transport-security-ats)
 * [Using a URL Session](#using-a-url-session)
 * [NSCopying Behavior](#nscopying-behavior)
 * [Thread Safety](#thread-safety)
@@ -30,13 +30,13 @@
 URLSession 클래스 및 관련 클래스는 콘텐츠를 다운로드하기위한 API를 제공한다. 이 API는 인증 지원을위한 다양한 델리게이트 메서드를 제공하며 앱이 실행되지 않을 때 백그라운드 다운로드를 수행할 수 있도록하거나 iOS에서는 앱이 일시 중지된 상태에서 앱을 다운로드하는 기능을 제공한다.
 
 
-& nbsp;
+&nbsp;
 >  **Important**
 > 
 > URLSession API에는 참조 문서를 독자적으로 읽는 경우 명확하지 않을 수 있는 여러 가지 클래스가 상당히 복잡한 방식으로 함께 포함된다. 이 API를 사용하기 전에 [URL Loading System](https://developer.apple.com/documentation/foundation/url_loading_system) 개요를 읽어야한다. [First Steps](https://developer.apple.com/documentation/foundation/url_loading_system#2878017) 섹션의 기사에서는 URLSession을 사용하여 일반적인 작업을 수행하는 예제를 제공한다. 
-
-
 &nbsp;
+
+
 URLSession API를 사용하면 하나 이상의 세션이 만들어지며 각 세션은 관련 데이터 전송 작업 그룹을 조정한다. 예를 들어 웹 브라우저를 만드는 경우 탭 또는 창당 하나의 세션을 만들거나 대화형으로 사용할 세션을 만들고 백그라운드 다운로드용으로 세션을 만들 수 있다. 각 세션 내에서 앱은 일련의 작업을 추가한다. 각 작업은 특정 URL에 대한 요청을 나타낸다(필요한 경우 HTTP 리다이렉션에 따라).
 
 
