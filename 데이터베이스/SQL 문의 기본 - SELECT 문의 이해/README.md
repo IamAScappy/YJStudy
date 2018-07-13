@@ -117,24 +117,23 @@ SELECT Name, Population FROM city WHERE district = 'chollanam' AND population > 
 
 ### 연산자 우선순위
 위에서부터 우선순위가 높고 아래로 갈수록 우선순위가 낮다. 같은 행의 연산자는 우선순위가 같다.
-**연산자** |    
------ | 
-INTERVAL | 
-BINARY, COLLATE | 
--(단항 감산), ~(단항 비트 반전) | 
-^ | 
-*, /, DIV, %, MOD | 
--, + | 
-<<, >> | 
-& | 
-| | 
-=(비교 등호), <=>, >=, >, <=, <, <>, !=, IS, LIKE, REGEXP, IN | 
-BETWEEN, CASE, WHEN, THEN, ELSE | 
-NOT | 
-&&, AND | 
-XOR | 
-||, OR | 
-=(대입 등호), := | 
+**연산자**
+* INTERVAL 
+* BINARY, COLLATE 
+* -(단항 감산), ~(단항 비트 반전) 
+* ^ 
+* *, /, DIV, %, MOD 
+* -, + 
+* <<, >> 
+* & 
+* | 
+* =(비교 등호), <=>, >=, >, <=, <, <>, !=, IS, LIKE, REGEXP, IN 
+* BETWEEN, CASE, WHEN, THEN, ELSE 
+* NOT 
+* &&, AND 
+* XOR 
+* ||, OR 
+* =(대입 등호), := 
 
 
 조건이 복잡한 경우 생각하지 않았던 순으로 평가된다면 의도치 않은 결과를 얻기도 한다. 이를 피하려면 괄호를 사용해 우선순위를 명확히 해야 한다.
