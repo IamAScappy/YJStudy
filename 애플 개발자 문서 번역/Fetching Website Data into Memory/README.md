@@ -13,7 +13,7 @@
 원격 서버와의 작은 상호 작용을 위해 [URLSessionDataTask](https://developer.apple.com/documentation/foundation/urlsessiondatatask) 클래스를 사용하여 응답 데이터를 메모리로 수신할 수 있다. ([URLSessionDownloadTask](https://developer.apple.com/documentation/foundation/urlsessiondownloadtask) 클래스를 사용하면 파일 시스템에 직접 데이터를 저장함). 데이터 작업은 웹 서비스 끝점(endpoint) 호출과 같은 작업에 이상적이다.
 
 
-URL 세션 인스턴스를 사용하여 작업을 만든다. 요구가 비교적 간단하다면 [URLSession](https://developer.apple.com/documentation/foundation/urlsession) 클래스의 공유 인스턴스를 사용할 수 있다. 델리게이트 콜백을 통해 전송과 상호 작용하려는 경우 [shared](https://developer.apple.com/documentation/foundation/urlsession/1409000-shared) 인스턴스를 사용하는 대신 세션을 만들어야한다. 세션을 만들 때 [URLSessionConfiguration](https://developer.apple.com/documentation/foundation/urlsessionconfiguration) 인스턴스를 사용하고 [URLSessionDelegate](https://developer.apple.com/documentation/foundation/urlsessiondelegate) 또는 해당 서브 프로토콜 중 하나를 구현하는 클래스를 전달한다. 세션은 여러 작업을 생성하기 위해 재사용할 수 있으므로 필요로하는 고유한 구성마다 세션을 만들어 프로퍼티로 저장한다.
+URL 세션 인스턴스를 사용하여 작업을 만든다. 요구가 비교적 간단하다면 [URLSession](https://developer.apple.com/documentation/foundation/urlsession) 클래스의 shared 인스턴스를 사용할 수 있다. 델리게이트 콜백을 통해 전송과 상호 작용하려는 경우 [shared](https://developer.apple.com/documentation/foundation/urlsession/1409000-shared) 인스턴스를 사용하는 대신 세션을 만들어야한다. 세션을 만들 때 [URLSessionConfiguration](https://developer.apple.com/documentation/foundation/urlsessionconfiguration) 인스턴스를 사용하고 [URLSessionDelegate](https://developer.apple.com/documentation/foundation/urlsessiondelegate) 또는 해당 서브 프로토콜 중 하나를 구현하는 클래스를 전달한다. 세션은 여러 작업을 생성하기 위해 재사용할 수 있으므로 필요로하는 고유한 구성마다 세션을 만들어 프로퍼티로 저장한다.
 
 
 &nbsp;
@@ -38,7 +38,7 @@ URL 세션 인스턴스를 사용하여 작업을 만든다. 요구가 비교적
 완료 핸들러를 사용하는 데이터 작업을 만들려면 URLSession의 [dataTask(with:)]() 메서드를 호출한다. 완료 핸들러는 다음 세 가지 작업을 수행해야 한다:
 1. error 파라미터가 nil인지 확인한다. 그렇지 않은 경우 전송 오류가 발생했으므로 오류를 처리하고 종료한다.
 2. response 파라미터를 확인하여 상태 코드가 성공을 나타내고 MIME 타입이 예상 값인지 확인한다. 그렇지 않으면 서버 오류를 처리하고 종료한다.
-3. 필요에 따라 데이터 인스턴스를 사용한다.
+3. 필요에 따라 data 인스턴스를 사용한다.
 
 
 아래 코드는 URL 콘텐츠를 가져오기 위한 startLoad() 메서드를 보여준다. URLSession 클래스의 shared 인스턴스를 사용하여 결과를 완료 핸들러에 전달하는 데이터 작업을 만든다. 로컬 및 서버 오류를 확인한 후 이 핸들러는 데이터를 문자열로 변환하고 이를 사용하여 WKWebView 아울렛을 채운다. 물론, 데이터 모델로 파싱하는 것과 같이 가져온 데이터를 다른 용도로 사용할 수도 있다.
