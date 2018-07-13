@@ -28,7 +28,7 @@ URL 로딩 시스템은 생성한 https 또는 커스텀 프로토콜과 같은 
 ![](https://docs-assets.developer.apple.com/published/4bf9c6d271/6789dd96-afdc-4c18-b8eb-01f9012dc04d.png)
 
 
-각 세션은 주기적인 업데이트(또는 오류)를 수신하는 델리게이트와 연결된다. 기본 델리게이트는 사용자가 제공한 완료 핸들러 블록을 호출한다. 커스텀 델리게이트르 제공하도록 선택하면 블록이 호출되지 않는다.
+각 세션은 주기적인 업데이트(또는 오류)를 수신하는 델리게이트와 연결된다. 기본 델리게이트는 사용자가 제공한 완료 핸들러 블록을 호출한다. 커스텀 델리게이트를 제공하도록 선택하면 블록이 호출되지 않는다.
 
 
 백그라운드에서 실행되도록 세션을 구성 할 수 있으므로 앱이 일시 중지된 상태에서 시스템이 대신 데이터를 다운로드하고 앱을 실행하여 결과를 제공 할 수 있다.
@@ -94,7 +94,7 @@ URL 로딩 시스템은 생성한 https 또는 커스텀 프로토콜과 같은 
 ### Errors
 * `struct URLError`
     * URL 로딩 API가 반환하는 오류 코드이다.
-* [URL Loading System Error Info Keys(https://developer.apple.com/documentation/foundation/url_loading_system/url_loading_system_error_info_keys)
+* [URL Loading System Error Info Keys](https://developer.apple.com/documentation/foundation/url_loading_system/url_loading_system_error_info_keys)
     * URL 로딩 API에서 생성된 오류 객체의 사용자 정보 딕셔너리에서 이 키를 인식한다.
     
 
