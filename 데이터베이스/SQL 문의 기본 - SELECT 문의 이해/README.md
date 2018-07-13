@@ -26,7 +26,7 @@
 * [뷰의 작성과 서브쿼리 및 결합](#뷰의-작성과-서브쿼리-및-결합)
     * [뷰를 사용하는 이점](#뷰를-사용하는-이점)
     * [뷰를 작성하는 CREATE VIEW 문](#뷰를-작성하는-create-view-문)
-    * [뷰로의 입력, 갱신의 제한](#뷰로의-입력,-갱신의-제한)
+    * [뷰로의 입력, 갱신의 제한](#뷰로의-입력-갱신의-제한)
     * [서브쿼리의 실행이란](#서브쿼리의-실행이란)
     * [결합이란](#결합이란)
     * [내부결합이란](#내부결합이란)
@@ -179,7 +179,7 @@ select district from city where countrycode = 'kor' group by district;
 ```
 
 
-![기본적인 SELECT 문]()
+![기본적인 SELECT 문](https://github.com/0jun0815/YJStudy/blob/master/데이터베이스/SQL%20문의%20기본%20-%20SELECT%20문의%20이해/images/기본적인%20SELECT%20문.jpg)
 
 
 &nbsp;
@@ -418,7 +418,7 @@ select district, count(*) from city where countrycode = 'kor' group by district 
 *  1 SELECT / 2 FROM / 3 WHERE / 4 GROUB BY / 5 HAVING / 6 ORDER BY
 
 
-![SELECT 문의 응용]()
+![SELECT 문의 응용](https://github.com/0jun0815/YJStudy/blob/master/데이터베이스/SQL%20문의%20기본%20-%20SELECT%20문의%20이해/images/SELECT%20문의%20응용.jpg)
 
 
 &nbsp;
@@ -592,7 +592,7 @@ DELETE FROM 테이블명 WHERE 조건;
 WHERE로 지정한 조건은 각 행에 대한 것이다. 제거는 WHERE 구문과 일치한 행 전체에 대해 수행하므로 1행을 대상으로 제거하려면 WHERE 구문의 대상을 유니크하게 특정할 필요가 있다. 행을 유니크하게 특정하는 데는 복수의 열의 값을 AND로 지정하거나 유니크한 것이 분명한 열을 조건으로 지정한다.
 
 
-![데이터의 갱신(UPDATE/INSERT/DELETE)]()
+![데이터의 갱신(UPDATE/INSERT/DELETE)](https://github.com/0jun0815/YJStudy/blob/master/데이터베이스/SQL%20문의%20기본%20-%20SELECT%20문의%20이해/images/데이터의%20갱신(UPDATE:INSERT:DELETE).jpg)
 
 
 &nbsp;
@@ -656,7 +656,7 @@ select district, name, population from citykorea as c1 where population > (selec
 +---------------+-----------+------------+
 ```
 
-![서브쿼리의 이미지]()
+![서브쿼리의 이미지](https://github.com/0jun0815/YJStudy/blob/master/데이터베이스/SQL%20문의%20기본%20-%20SELECT%20문의%20이해/images/서브쿼리의%20이미지.jpg)
 
 
 서브쿼리는 일반쿼리에서 테이블이나 단일값을 둔 장소 대부분에서 이요하는 것이 가능하며 다양한 변형이 있다.
@@ -673,7 +673,7 @@ SQL은 2개 이상의 테이블을 대상으로 실행하는 것도 가능하다
 결합은 2개의 테이블에서 필요한 열을 가지고 올 때 행을 결합하기 위한 조건을 'ON'으로 지정한다. 내부결합(Inner Join)에서는 이 ON으로 지정한 결합 조건에 일치하는 행만을 2개의 테이블로부터 가져올 수 있다.
 
 
-![내부결합]()
+![내부결합](https://github.com/0jun0815/YJStudy/blob/master/데이터베이스/SQL%20문의%20기본%20-%20SELECT%20문의%20이해/images/내부결합.jpg)
 
 
 ```
@@ -713,7 +713,7 @@ SELECT 선택하고 싶은 열의 리스트 FROM 첫 번째 테이블명 LEFT OU
 LEFT OUTER 키워드를 사용한다. LEFT, 즉 2개의 테이블 중 왼쪽 테이블(첫 번째 테이블)의 전체 행이 표시되고, 다른 테이블의 행 데이터는 결합 조건과 일치할 때 그 값이 되고, 일치하는 것이 없으면 'NULL'이 된다.
 
 
-![외부결합]()
+![외부결합](https://github.com/0jun0815/YJStudy/blob/master/데이터베이스/SQL%20문의%20기본%20-%20SELECT%20문의%20이해/images/외부결합.jpg)
 
 
 &nbsp;
