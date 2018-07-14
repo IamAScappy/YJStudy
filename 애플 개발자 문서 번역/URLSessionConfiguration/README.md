@@ -58,7 +58,7 @@ URL 세션의 동작 및 기능은 주로 세션을 만드는데 사용되는 �
 ### Creating a Session Configuration Object
 > 세션 구성 객체 만들기
 
-* `class var `default`: URLSessionConfiguration`
+* `class var 'default': URLSessionConfiguration`
     * 기본 세션 구성 객체이다.
 * `class var ephemeral: URLSessionConfiguration`
     * 캐시, 쿠키 또는 자격 증명에 영구 저장소를 사용하지 않는 세션 구성이다.
@@ -174,7 +174,7 @@ URL 세션의 동작 및 기능은 주로 세션을 만드는데 사용되는 �
 ### Deprecated Methods
 > 사용되지 않는 메서드
 
-* *class func backgroundSessionConfiguration(String) -> URLSessionConfiguration*
+* ~~class func backgroundSessionConfiguration(String) -> URLSessionConfiguration~~
     * HTTP 및 HTTPS 업로드 또는 다운로드를 백그라운드에서 수행 할 수 있도록하는 세션 구성 객체를 반환한다. **더 이상 사용되지 않음**
 
 
