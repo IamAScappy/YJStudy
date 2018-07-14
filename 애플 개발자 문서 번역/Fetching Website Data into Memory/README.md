@@ -10,7 +10,7 @@
 
 &nbsp;    
 ## Overview
-원격 서버와의 작은 상호 작용을 위해 [URLSessionDataTask](https://developer.apple.com/documentation/foundation/urlsessiondatatask) 클래스를 사용하여 응답 데이터를 메모리로 수신할 수 있다. ([URLSessionDownloadTask](https://developer.apple.com/documentation/foundation/urlsessiondownloadtask) 클래스를 사용하면 파일 시스템에 직접 데이터를 저장함). 데이터 작업은 웹 서비스 끝점(endpoint) 호출과 같은 작업에 이상적이다.
+원격 서버와의 작은 상호 작용을 위해 [URLSessionDataTask](https://developer.apple.com/documentation/foundation/urlsessiondatatask) 클래스를 사용하여 응답 데이터를 메모리로 수신할 수 있다. ([URLSessionDownloadTask](https://developer.apple.com/documentation/foundation/urlsessiondownloadtask) 클래스를 사용하면 파일 시스템에 직접 데이터를 저장함). 데이터 작업은 웹 서비스 앤드포인트 호출과 같은 작업에 이상적이다.
 
 
 URL 세션 인스턴스를 사용하여 작업을 만든다. 요구가 비교적 간단하다면 [URLSession](https://developer.apple.com/documentation/foundation/urlsession) 클래스의 shared 인스턴스를 사용할 수 있다. 델리게이트 콜백을 통해 전송과 상호 작용하려는 경우 [shared](https://developer.apple.com/documentation/foundation/urlsession/1409000-shared) 인스턴스를 사용하는 대신 세션을 만들어야한다. 세션을 만들 때 [URLSessionConfiguration](https://developer.apple.com/documentation/foundation/urlsessionconfiguration) 인스턴스를 사용하고 [URLSessionDelegate](https://developer.apple.com/documentation/foundation/urlsessiondelegate) 또는 해당 서브 프로토콜 중 하나를 구현하는 클래스를 전달한다. 세션은 여러 작업을 생성하기 위해 재사용할 수 있으므로 필요로하는 고유한 구성마다 세션을 만들어 프로퍼티로 저장한다.
