@@ -41,7 +41,10 @@ URL 세션 인스턴스를 사용하여 작업을 만든다. 요구가 비교적
 3. 필요에 따라 data 인스턴스를 사용한다.
 
 
-아래 코드는 URL 콘텐츠를 가져오기 위한 startLoad() 메서드를 보여준다. URLSession 클래스의 shared 인스턴스를 사용하여 결과를 완료 핸들러에 전달하는 데이터 작업을 만든다. 로컬 및 서버 오류를 확인한 후 이 핸들러는 데이터를 문자열로 변환하고 이를 사용하여 WKWebView 아울렛을 채운다. 물론, 데이터 모델로 파싱하는 것과 같이 가져온 데이터를 다른 용도로 사용할 수도 있다.
+Listing 1은 URL 콘텐츠를 가져오기 위한 startLoad() 메서드를 보여준다. URLSession 클래스의 shared 인스턴스를 사용하여 결과를 완료 핸들러에 전달하는 데이터 작업을 만든다. 로컬 및 서버 오류를 확인한 후 이 핸들러는 데이터를 문자열로 변환하고 이를 사용하여 WKWebView 아울렛을 채운다. 물론, 데이터 모델로 파싱하는 것과 같이 가져온 데이터를 다른 용도로 사용할 수도 있다.
+
+
+**Listing 1** Creating a completion handler to receive data-loading results
 ```
 func startLoad() {
     let url = URL(string: "https://www.example.com/")!
@@ -85,10 +88,13 @@ func startLoad() {
 이 방법을 사용하면 전송이 완료되거나 오류가 발생하여 실패 할 때까지 데이터의 일부가 [URLSessionDataDelegate](https://developer.apple.com/documentation/foundation/urlsessiondatadelegate)의 [urlSession(_:dataTask:didRecive:)](https://developer.apple.com/documentation/foundation/urlsessiondatadelegate/1411528-urlsession) 메서드에 전달된다. 델리게이트는 전송이 진행됨에 따라 다른 종류의 이벤트도 받는다.
 
 
-델리게이트 방식을 사용하는 경우 URLSession 클래스의 단순 shared 인스턴스를 사용하는 대신 고유한 URLSession 인스턴스를 만들어야 한다. 새로운 세션을 생성하면 자신의 클래스를 세션의 델리게이트로 설정할 수 있다(아래 코드 참조).
+델리게이트 방식을 사용하는 경우 URLSession 클래스의 단순 shared 인스턴스를 사용하는 대신 고유한 URLSession 인스턴스를 만들어야 한다. 새로운 세션을 생성하면 자신의 클래스를 세션의 델리게이트로 설정할 수 있다(Listing 2 참조).
 
 
 클래스가 하나 이상의 델리게이트 프로토콜 ([URLSessionDelegate](https://developer.apple.com/documentation/foundation/urlsessiondelegate), [URLSessionTaskDelegate](https://developer.apple.com/documentation/foundation/urlsessiontaskdelegate), [URLSessionDataDelegate](https://developer.apple.com/documentation/foundation/urlsessiondatadelegate), [URLSessionDownloadDelegate](https://developer.apple.com/documentation/foundation/urlsessiondownloaddelegate))을 구현한다고 선언한다. 그런 다음 이니셜 라이저 [init(configuration:delegate:delegateQueue:)](https://developer.apple.com/documentation/foundation/urlsession/1411597-init)를 사용하여 URL 세션 인스턴스를 만든다. 이 초기화와 함께 사용되는 구성 인스턴스를 커스텀화 할 수 있다. 예를 들어 [waitForConnectivity](https://developer.apple.com/documentation/foundation/urlsessionconfiguration/2908812-waitsforconnectivity)를 true로 설정하는 것이 좋다. 그러면 세션은 필요한 연결을 사용할 수 없는 경우 즉시 실패하지 않고 적절한 연결을 기다린다.
+
+
+**Listing 2** Creating a URLSession that uses a delegate
 ```
 private lazy var session: URLSession = {
     let configuration = URLSessionConfiguration.default
@@ -99,10 +105,13 @@ private lazy var session: URLSession = {
 ```
 
 
-아래 코드는 이 세션을 사용하여 데이터 작업을 시작하고 델리게이트 콜백을 사용하여 수신된 데이터 및 오류를 처리하는 startLoad() 메서드를 보여준다. 이 코드는 세 가지 델리게이트 콜백을 구현한다:
+Listing 3은 이 세션을 사용하여 데이터 작업을 시작하고 델리게이트 콜백을 사용하여 수신된 데이터 및 오류를 처리하는 startLoad() 메서드를 보여준다. 이 코드는 세 가지 델리게이트 콜백을 구현한다:
 * [urlSession(_:dataTask:didReceive:completionHandler:)](https://developer.apple.com/documentation/foundation/urlsessiondatadelegate/1410027-urlsession) 응답에 성공한 HTTP 상태 코드가 있고 MIME 타입이 text/html 또는 text/plain인지 확인한다. 둘 중 하나라도 해당하지 않으면 작업이 취소된다. 그렇지 않으면 계속 진행할 수 있다.
 * [urlSession(_:dataTask:didReceive:)](https://developer.apple.com/documentation/foundation/urlsessiondatadelegate/1411528-urlsession) 작업에서 받은 각 Data 인스턴스를 받아서 receivedData라는 버퍼에 추가한다.
 * [urlSession(_:task:didCompleteWithError:)](https://developer.apple.com/documentation/foundation/urlsessiontaskdelegate/1411610-urlsession) 먼저 전송 수준 오류가 발생했는지 확인한다. 오류가 없으면 receivedData 버퍼를 문자열로 변환하여 webView의 콘텐츠로 설정하려고 시도한다.
+
+
+**Listing 3** Using a delegate with a URL session data task
 ```
 var receivedData: Data?
 
