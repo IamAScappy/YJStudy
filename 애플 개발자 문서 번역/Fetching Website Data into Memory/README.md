@@ -161,8 +161,8 @@ func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithErro
 &nbsp;
 ## See Also
 ### First Step
-* [Uploading Data to Website]()
-* [Downloading Files in the Background]()
+* [Uploading Data to Website](https://developer.apple.com/documentation/foundation/url_loading_system/uploading_data_to_a_website)
+* [Downloading Files in the Background](https://developer.apple.com/documentation/foundation/url_loading_system/downloading_files_in_the_background)
 * class URLSession
 * class URLSessionConfiguration
 * class URLSessionTask
