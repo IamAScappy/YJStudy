@@ -59,7 +59,7 @@ request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
 &nbsp;
 ## Create and Start an Upload Task
-업로드를 시작하려면 URLSession 인스턴스에서 [uploadTask(with:completionHandler:)](https://developer.apple.com/documentation/foundation/urlsession/1411518-uploadtask)를 호출하여 업로드 [URLSessionTask](https://developer.apple.com/documentation/foundation/urlsessiontask) 인스턴스를 만들고 이전에 설정 한 request와 data 인스턴스를 전달한다. 작업이 일시 중단 된 상태에서 시작하기 때문에 작업에서 [resume()](https://developer.apple.com/documentation/foundation/urlsessiontask/1411121-resume)을 호출하여 네트워크 로드 프로세스를 시작한다. Listing 3은 shared URLSession 인스턴스를 사용하고 완료 핸들러에서 결과를 수신한다. 핸들러는 리턴된 data를 사용하기전에 전송 과 서버 에러를 확인한다.
+업로드를 시작하려면 URLSession 인스턴스에서 [uploadTask(with:completionHandler:)](https://developer.apple.com/documentation/foundation/urlsession/1411518-uploadtask)를 호출하여 업로드 [URLSessionTask](https://developer.apple.com/documentation/foundation/urlsessiontask) 인스턴스를 만들고 이전에 설정 한 request와 data 인스턴스를 전달한다. 작업이 일시 중단 된 상태에서 시작하기 때문에 작업에서 [resume()](https://developer.apple.com/documentation/foundation/urlsessiontask/1411121-resume)을 호출하여 네트워크 로드 프로세스를 시작한다. Listing 3은 shared URLSession 인스턴스를 사용하고 완료 핸들러에서 결과를 수신한다. 핸들러는 리턴된 data를 사용하기전에 전송과 서버 에러를 확인한다.
 
 
 **Listing 3** Starting an upload task
