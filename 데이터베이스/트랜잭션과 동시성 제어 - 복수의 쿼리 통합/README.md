@@ -183,7 +183,7 @@ PRIMARY KEY (`i1`)
 ```
 
 
-*nbsp;
+&nbsp;
 ## 트랜잭션 격리 수준에 따른 외관상 차이
 ### MVCC에 따른 MySQL의 특성
 MySQL(InnoDB형 테이블)은 현재 DBMS의 주류가 된 'MVCC(Multi Versioning Concurrency Control)'라는 기술을 사용하고 있다. MVCC를 사용하기 때문에 MySQL은 다음 특성을 가진다.
