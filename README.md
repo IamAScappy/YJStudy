@@ -25,6 +25,7 @@
 * [데이터베이스와 아키텍처 구성 - 견고하고 고속의 시스템을 구축하기 위해](https://github.com/0jun0815/YJStudy/tree/master/데이터베이스/데이터베이스와%20아키텍처%20구성%20-%20견고하고%20고속의%20시스템을%20구축하기%20위해)
 * [DBMS를 조작할 때 필요한 기본 지식 - 조작하기 전에 알아두어야 할 것](https://github.com/0jun0815/YJStudy/tree/master/데이터베이스/DBMS를%20조작할%20때%20필요한%20기본%20지식%20-%20조작하기%20전에%20알아두어야%20할%20것)
 * [SQL 문의 기본 - SELECT 문의 이해](https://github.com/0jun0815/YJStudy/tree/master/데이터베이스/SQL%20문의%20기본%20-%20SELECT%20문의%20이해)
+* [트랜잭션과 동시성 제어 - 복수의 쿼리 통합](https://github.com/0jun0815/YJStudy/tree/master/데이터베이스/트랜잭션과%20동시성%20제어%20-%20복수의%20쿼리%20통합)
 
 
 ### 알고리즘
@@ -162,6 +163,9 @@
     * [prepare(for:sender:)](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/prepare(forsender))
 > Navigation Interface
 * [UINavigationItem](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/UINavigationItem)
+> Tab View Interface
+* [UITabBarController](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/UITabBarController)
+    * [UITabBarControllerDelegate](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/UITabBarControllerDelegate)
 > Images and Video
 * [UIImagePickerController](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/UIImagePickerController)
     * [UIImagePickerControllerDelegate](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/UIImagePickerControllerDelegate)
@@ -171,6 +175,11 @@
 * [UIActivityItemSource](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/UIActivityItemSource)
 * [UIActivity](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/UIActivity)
 
+
+#### Windows and Screens
+> Alerts
+* [UIAlertController](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/UIAlertController)
+* [UIAlertAction](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/UIAlertAction)
 
 #### Touches, Press, and Gestures
 > Custom Gestures
