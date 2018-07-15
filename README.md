@@ -101,11 +101,11 @@
 
 
 #### URL Loding System
-* [URL Loding System](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/url-loding-system)
+* [URL Loding System](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/URL%20Loading%20System)
 > First Steps
-* [Fetching Website Data into Memory](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/fetching-website-data-into-memory)
-* [Uploading Data to a Website](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/uploading-data-to-a-website)
-* [Downloading Files in the Background](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/downloading-files-in-the-background)
+* [Fetching Website Data into Memory](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/Fetching%20Website%20Data%20into%20Memory)
+* [Uploading Data to a Website](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/Uploading%20Data%20to%20a%20Website)
+* [Downloading Files in the Background](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/Downloading%20Files%20in%20the%20Background)
 * [URLSession](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/URLSession)
     * [URLSessionDataTask](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/URLSessionDataTask)
 * [URLSessionConfiguration](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/URLSessionConfiguration)
