@@ -35,7 +35,7 @@
 ### Getting the Default Queue
 > 기본 큐 얻기
 
-* `class var `default`: NotificationQueue`
+* `class var 'default': NotificationQueue`
     * 현재의 스레드의 기본 노티피케이션 큐를 반환한다.
     
 
