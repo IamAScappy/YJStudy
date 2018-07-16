@@ -124,7 +124,7 @@
 
 #### Notifications
 > Notifications
-* [Noticifation](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/Noticifation)
+* [Notification](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/Notification)
 * [NotificationCenter](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/NotificationCenter)
 * [NotificationQueue](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/NotificationQueue)
 
