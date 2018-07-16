@@ -13,6 +13,7 @@
     * [UIKit](#uikit)
     * [AVFoundation](#avfoundation)
     * [Photos](#photos)
+    * [Dispatch](#dispatch)
     * [Other Article](#other-article)
     
 
