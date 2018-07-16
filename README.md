@@ -121,6 +121,12 @@
 > Scheduling
 * [Timer](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/Timer)
 
+#### Notifications
+> Notifications
+* [Noticifation](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/Noticifation)
+* [NotificationCenter](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/NotificationCenter)
+* [NotificationQueue](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/NotificationQueue)
+
 #### Archives and Serialization
 > First Steps
 * [Encoding and Decoding Custom Types](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/Encoding%20and%20Decoding%20Custom%20Types)
@@ -133,6 +139,7 @@
 #### Preferences
 > App-Specific Data
 * [UserDefaults](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/UserDefaults)
+
 
 ### UIKit
 #### Core App
@@ -190,7 +197,6 @@
 * [UIActivityItemSource](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/UIActivityItemSource)
 * [UIActivity](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/UIActivity)
 
-
 #### Windows and Screens
 > Alerts
 * [UIAlertController](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/UIAlertController)
@@ -200,6 +206,7 @@
 > Custom Gestures
 * [UIGestureRecognizer](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/UIGestureRecognizer)
 * [UIGestureRecognizerDelegate](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/UIGestureRecognizerDelegate)
+
 
 ### AVFoundation
 #### Media Assets, Playback, and Editing
@@ -216,8 +223,18 @@
 * [AVAudioPlayer](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/AVAudioPlayer)
     * [AVAudioPlayerDelegate](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/AVAudioPlayerDelegate)
     
+    
 ### Photos
 * [PhotoKit](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/PhotoKit)
+
+
+### Dispatch
+* [Dispatch](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/Dispatch)
+> Managing Dispatch Queue
+* [DispatchQueue](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/DispatchQueue)
+> Prioritizing Work and Specifying Quality of Service
+* [DispatchQoS](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/DispatchQoS)
+
 
 ### Other Article
 * [Adopting Cocoa Design Patterns](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/Adopting%20Cocoa%20Design%20Patterns)
