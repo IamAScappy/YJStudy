@@ -1,4 +1,4 @@
-# Dispatch
+# 적
 > 시스템이 관리하는 디스패치 큐에 작업을 제출하여 멀티 코어 하드웨어에서 동시에 코드를 실행한다.
 
 
@@ -54,7 +54,7 @@ GCD는 애플리케이션이 블록 객체 형태로 작업을 제출할 수 있
 #### System-Provided Queues
 > 시스템 제공 대기열
 
-애플리케이션이 시작되면 시스템은 자동으로 메인 큐라는 특수 큐를 만든다. 메인 큐에 포함된 작업 항목은 앱의 메인 스레드에서 직렬로 실행된다. 메인 타입 프로퍼티를 사용하여 메인 큐에 접근 할 수 있다.
+애플리케이션이 시작되면 시스템은 자동으로 메인 큐라는 특수 큐를 만든다. 메인 큐에 포함된 작업 항목은 앱의 메인 스레드에서 직렬로 실행된다. main 타입 프로퍼티를 사용하여 메인 큐에 접근 할 수 있다.
 
 
 > **Important**
@@ -224,7 +224,7 @@ GCD는 애플리케이션이 메모리 관리, 실행 일시 중지 및 다시 �
 * `class DispatchObject`
     * DispatchObject는 [DispatchQueue](https://developer.apple.com/documentation/dispatch/dispatchqueue), [DispatchGroup](https://developer.apple.com/documentation/dispatch/dispatchgroup) 및 [DispatchSource](https://developer.apple.com/documentation/dispatch/dispatchsource)를 포함한 많은 디스패치 타입의 기본 클래스이다.
 * `enum DispatchPredicate`
-    * DispatchPredicate는 dispatchPrecondition(condition:) 메서드를 사용하여 지정된 실행 컨텍스트 내에서 평가할 수 있는 논맂거 조건을 나타낸다.
+    * DispatchPredicate는 dispatchPrecondition(condition:) 메서드를 사용하여 지정된 실행 컨텍스트 내에서 평가할 수 있는 논리적 조건을 나적낸다.
 * [Dispatch Constants](https://developer.apple.com/documentation/dispatch/dispatch_constants)
 * `func dispatchPrecondition(condition: () -> DispatchPredicate)`
     * 추가 실행에 필요한 디스패치 조건을 확인한다.
