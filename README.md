@@ -90,7 +90,7 @@
 * [커스텀 버튼 만들기](https://github.com/0jun0815/YJCustomButton)
 * [위치 서비스 사용하기](https://github.com/0jun0815/YJCoreLocation)
 * [현재 앱에서 다른 앱 실행하기](https://github.com/0jun0815/YJStudy/tree/master/iOS/현재%20앱에서%20다른%20앱%20실행하기)
-* [Dispatch Queue와 Operation Queue](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/Concurrency%20Programming%20Guide#the-move-away-from-threads)
+* [Dispatch Queue와 Operation Queue](https://github.com/0jun0815/YJStudy/tree/master/iOS/Dispatch%20Queue와%20Operation%20Queue)
 
 
 &nbsp; 
