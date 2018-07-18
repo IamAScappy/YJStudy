@@ -1,4 +1,4 @@
-# 조
+# Dispatch Queue와 Operation Queue
 
 * [Dispatch Queue](#dispatch-queue)
 * [Operation Queue](#operation-queue)
@@ -46,4 +46,4 @@
 
 &nbsp;
 &nbsp;      
-### [by조 0junChoi](https://github.com/0jun0815) email: <0jun0815@gmail.com>
+### [by. 0junChoi](https://github.com/0jun0815) email: <0jun0815@gmail.com>
