@@ -1,4 +1,4 @@
-# Dispatch Queue와 Operation Queue
+# 조
 
 * [Dispatch Queue](#dispatch-queue)
 * [Operation Queue](#operation-queue)
@@ -21,7 +21,7 @@
 * 디스패치 큐에 작업을 비동기적으로 전달하면 큐를 교착 상태(데드락)로 만들 수 없다.
 
 
-[Dispatch Queue](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/DispatchQueue)
+[Dispatch Queue](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/DispatchQueue) 참조
 
 
 &nbsp;
@@ -33,7 +33,7 @@
 * 큐에 추가된 후 작업은 명시적으로 취소되거나 해당 작업의 실행이 완료될 때까지 큐에 남아있는다. 
 
 
-[Operation Queue](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/Operation)
+[Operation Queue](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/OperationQueue) 참조
 
 
 ## Dispatch Queue vs Opration Queue
@@ -41,9 +41,9 @@
 * 디스패치 큐는 작업을 선입선출로 수행하지만 연산 큐는 종속성을 통해 순서를 특정 순서로 수행할 수 있다.
 
 
-[Concurrency Programming Guide](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/Concurrency%20Programming%20Guide#the-move-away-from-threads)
+[Concurrency Programming Guide](https://github.com/0jun0815/YJStudy/tree/master/애플%20개발자%20문서%20번역/Concurrency%20Programming%20Guide#the-move-away-from-threads) 참조
 
 
 &nbsp;
 &nbsp;      
-### [by. 0junChoi](https://github.com/0jun0815) email: <0jun0815@gmail.com>
+### [by조 0junChoi](https://github.com/0jun0815) email: <0jun0815@gmail.com>
