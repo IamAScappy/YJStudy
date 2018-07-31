@@ -137,10 +137,12 @@ DBMS | Oracle | MySQL | PostgreSQL | DB2 | SQL Server
 
 
 | A | B | C |
+| - | - | - |
 | <r2> 1 | <c2> 2 |
 | 가 | 나 |
 
 | A | B | C |
+| - | - | - |
 | 1 | <c2><r2> 열/행 모두 병합 |
 | 가 |
 
