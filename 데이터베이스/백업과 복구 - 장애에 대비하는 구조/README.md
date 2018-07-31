@@ -136,6 +136,13 @@ DBMS | Oracle | MySQL | PostgreSQL | DB2 | SQL Server
 | | 플랫폼 의존 바이너리는 동일한 DBMS라도 호환되지 않는다.
 
 
+| A | B | C |
+| <r2> 1 | <c2> 2 |
+| 가 | 나 |
+
+| A | B | C |
+| 1 | <c2><r2> 열/행 모두 병합 |
+| 가 |
 
 
 
